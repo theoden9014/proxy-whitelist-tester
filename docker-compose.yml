@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   testenv:
-    image: "ubuntu:23.04"
+    image: "amazonlinux:2023"
     environment:
       - "HTTP_PROXY=http://proxy:3128"
       - "HTTPS_PROXY=http://proxy:3128"
