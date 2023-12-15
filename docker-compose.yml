@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  google-chrome:
+  testenv:
     image: "ubuntu:23.04"
     environment:
       - "HTTP_PROXY=http://proxy:3128"

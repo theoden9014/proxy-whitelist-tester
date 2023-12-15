@@ -4,7 +4,7 @@
 
 ```mermaid
 graph TD;
-    testenv-->Proxy;
+    Testenv-->Proxy;
     Proxy-->Internet;
 ```
 
@@ -24,7 +24,7 @@ $ docker compose up -d
 
 ### Login to testenv.
 ```sh
-$ docker compose run -it --rm red-lan /bin/bash
+$ docker compose run -it --rm testenv /bin/bash
 ```
 
 ### See access logs.
