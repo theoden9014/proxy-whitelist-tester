@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  google-chrome:
+    image: "ubuntu:23.04"
+    environment:
+      - "HTTP_PROXY=http://proxy:3128"
+      - "HTTPS_PROXY=http://proxy:3128"
+    networks:
+      - "isolate"
+  proxy:
+    image: "ubuntu/squid"
+    restart: "always"
+    volumes:
+      - "./squid.conf:/etc/squid/squid.conf"
+      - "./whitelist:/etc/squid/whitelist"
+    ports:
+      - 3128
+    networks:
+      - "isolate"
+      - "proxy"
+
+networks:
+  isolate:
+    internal: true
+  proxy:
